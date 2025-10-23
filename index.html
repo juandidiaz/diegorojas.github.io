@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mago [Tu Nombre] — Magia elegante y minimalista</title>
+  <meta name="description" content="Magia elegante para eventos privados y corporativos. Contrata a Mago [Tu Nombre] para close-up, salón y espectáculos a medida. Reserva por teléfono." />
+  <meta name="author" content="Mago [Tu Nombre]" />
+  <meta property="og:title" content="Mago [Tu Nombre] — Magia elegante y minimalista" />
+  <meta property="og:description" content="Magia elegante para eventos privados y corporativos. Reserva por teléfono." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/foto1.jpg" />
+  <meta property="og:locale" content="es_ES" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fffdf8;           /* Fondo marfil muy suave */
+      --text:#111111;         /* Texto principal */
+      --muted:#6b6b6b;        /* Texto secundario */
+      --line:#eae6df;         /* Líneas sutiles */
+      --accent:#c6a15b;       /* Dorado sobrio */
+      --accent-contrast:#ffffff;
+      --max:1080px;           /* Ancho máximo de contenido */
+      --radius:18px;          /* Bordes redondeados */
+      --shadow:0 10px 30px rgba(17,17,17,.07);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:100%;max-width:var(--max);margin-inline:auto;padding:28px}
+    header{position:sticky;top:0;background:rgba(255,253,248,.8);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line);z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{opacity:.85}
+    .menu a:hover{opacity:1}
+    .phone-cta{padding:10px 16px;border-radius:999px;background:var(--accent);color:var(--accent-contrast);font-weight:600;box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(36px,6vw,60px);line-height:1.05;margin:0 0 14px}
+    .kicker{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+    .lead{font-size:clamp(16px,2.5vw,20px);color:#2a2a2a;max-width:42ch}
+    .cta-row{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:14px 20px;border-radius:999px;border:1px solid var(--text);font-weight:600}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-contrast)}
+    .hero-card{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-card img{aspect-ratio:16/10;object-fit:cover}
+    .hero-badge{position:absolute;bottom:14px;left:14px;background:rgba(17,17,17,.72);color:#fff;padding:8px 12px;border-radius:999px;font-size:12px}
+
+    /* Sección servicios */
+    section{padding:64px 0}
+    .section-title{font-family:"Playfair Display",serif;font-size:30px;margin:0 0 18px}
+    .section-sub{color:var(--muted);max-width:60ch;margin:0 0 24px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;box-shadow:var(--shadow)}
+    .card h3{margin:10px 0 8px;font-size:20px}
+    .card p{margin:0;color:#333}
+
+    /* Galería */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .grid figure{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#f7f4ee}
+    .grid img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .4s ease}
+    .grid figure:hover img{transform:scale(1.02)}
+    .grid figcaption{position:absolute;inset:auto 10px 10px 10px;background:rgba(0,0,0,.55);color:#fff;padding:6px 10px;border-radius:12px;font-size:12px}
+
+    /* Testimonios */
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    blockquote{margin:0;padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);font-style:italic;color:#1d1d1d}
+    blockquote footer{margin-top:8px;font-style:normal;color:var(--muted)}
+
+    /* Contacto */
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}
+    .contact .panel{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;box-shadow:var(--shadow)}
+    .big-phone{font-size:clamp(24px,5vw,36px);font-weight:700;letter-spacing:.5px}
+    .helper{color:var(--muted)}
+
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#444}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-grid,.cards,.grid,.quotes,.contact{grid-template-columns:1fr}
+      header{position:sticky}
+      .menu{display:none}
+      .menu.open{display:flex;flex-direction:column;align-items:flex-start;padding-top:10px}
+      .nav-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:8px 12px;border-radius:999px;background:#fff}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mago [Tu Nombre]",
+    "jobTitle": "Mago",
+    "description": "Magia elegante para eventos privados y corporativos.",
+    "telephone": "+34 600 000 000",
+    "areaServed": "España",
+    "url": "https://tuusuario.github.io/mago-web/"
+  }
+  </script>
+</head>
+<body>
+  <header id="inicio">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio"><span class="dot"></span> Mago [Tu Nombre]</a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="document.querySelector('.menu').classList.toggle('open')">Menú</button>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Contacto</a>
+        <a class="phone-cta" href="tel:+34600000000">Llamar: +34 600 000 000</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Magia para eventos</p>
+          <h1>Elegancia, sorpresa y cercanía en cada efecto</h1>
+          <p class="lead">Actuaciones de close‑up y salón para bodas, cumpleaños, cenas privadas y eventos corporativos. Espectáculos sobrios, cuidados y memorables.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="tel:+34600000000">Llamar ahora</a>
+            <a class="btn" href="#galeria">Ver galería</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Foto destacada">
+          <!-- Sustituye esta imagen por una tuya: assets/hero.jpg -->
+          <img src="assets/hero.jpg" alt="Mago actuando en un evento elegante" loading="lazy" />
+          <div class="hero-badge">Disponible en toda España</div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-sub">Paquetes flexibles según tu evento. Consulta disponibilidad por teléfono.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Close‑up</h3>
+            <p>Magia de cerca, mesa a mesa o en cóctel. Ideal para bodas, cenas y eventos sociales. Interacción directa y momentos imposibles en las manos de tus invitados.</p>
+          </article>
+          <article class="card">
+            <h3>Salón / Escena</h3>
+            <p>Show para grupos medianos y grandes. Rutinas visuales, narrativa cuidada y participación del público con un tono elegante y respetuoso.</p>
+          </article>
+          <article class="card">
+            <h3>Empresas</h3>
+            <p>Acciones para marcas, presentaciones y ferias. Adaptación del guion a tu mensaje y creación de experiencias memorables alrededor de tu producto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <h2 class="section-title">Galería</h2>
+        <p class="section-sub">Añade tus fotos en la carpeta <code>assets/</code> y cambia las rutas de los <code>src</code> abajo.</p>
+        <div class="grid">
+          <figure>
+            <img src="assets/foto1.jpg" alt="Actuación de magia en boda" loading="lazy">
+            <figcaption>Evento 1</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/foto2.jpg" alt="Magia de cerca en cóctel" loading="lazy">
+            <figcaption>Evento 2</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/foto3.jpg" alt="Show de salón con público" loading="lazy">
+            <figcaption>Evento 3</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/foto4.jpg" alt="Rutina con cartas elegante" loading="lazy">
+            <figcaption>Detalle 1</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/foto5.jpg" alt="Participación del público" loading="lazy">
+            <figcaption>Detalle 2</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/foto6.jpg" alt="Ambiente de evento corporativo" loading="lazy">
+            <figcaption>Evento 4</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="opiniones">
+      <div class="container">
+        <h2 class="section-title">Opiniones</h2>
+        <p class="section-sub">Testimonios reales de clientes. Sustituye el texto por tus reseñas.</p>
+        <div class="quotes">
+          <blockquote>
+            “Magia sutil y elegante. Todos quedaron fascinados.”
+            <footer>— Laura R., boda en Sevilla</footer>
+          </blockquote>
+          <blockquote>
+            “Profesional y cercano. Perfecto para eventos corporativos.”
+            <footer>— Andrés M., evento de empresa</footer>
+          </blockquote>
+          <blockquote>
+            “Una experiencia impecable de principio a fin.”
+            <footer>— Marta G., cumpleaños privado</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container contact">
+        <div class="panel">
+          <h2 class="section-title">Contacto</h2>
+          <p class="helper">Prefiero contacto por teléfono. Llamadas y WhatsApp.</p>
+          <p class="big-phone"><a href="tel:+34600000000">+34 600 000 000</a></p>
+          <div class="cta-row">
+            <a class="btn primary" href="tel:+34600000000">Llamar</a>
+            <a class="btn" href="https://wa.me/34600000000" target="_blank" rel="noopener">Enviar WhatsApp</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h3 style="margin-top:0">Detalles</h3>
+          <p><strong>Disponibilidad:</strong> Bajo reserva.</p>
+          <p><strong>Zona:</strong> España. Desplazamientos a medida.</p>
+          <p><strong>Idioma:</strong> Español. </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <small>© <span id="y"></span> Mago [Tu Nombre]. Todos los derechos reservados.</small>
+      <small><a href="#inicio">Volver arriba</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Desplazamiento suave para anclas
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          const el=document.querySelector(id);
+          if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}  
+        }
+      })
+    })
+  </script>
+</body>
+</html>
